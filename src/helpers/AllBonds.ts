@@ -19,12 +19,12 @@ export const usdt = new StableBond({
   decimals: 6,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "",
-      reserveAddress: "",
+      bondAddress: "0x5804a27F56483E667F908513c41Cca9ADfDf039d",
+      reserveAddress: "0xdC19A122e268128B5eE20366299fc7b5b199C8e3",
     },
     [NetworkID.Testnet]: {
-      bondAddress: "0x6031fDd3b82D5b24092895224FE97EdE04672789",
-      reserveAddress: "0x840e2404dF8420B0f4794F67A50f2B4112362cD9",
+      bondAddress: "",
+      reserveAddress: "",
     },
     [NetworkID.Local]: {
       bondAddress: "",
@@ -43,12 +43,12 @@ export const usdt_spice = new LPBond({
   decimals: 6,
   networkAddrs: {
     [NetworkID.Mainnet]: {
-      bondAddress: "",
-      reserveAddress: "",
+      bondAddress: "0x2Aeb914723ebe496ed09c6F79BFB62F1E4554aAE",
+      reserveAddress: "0xed6A043Aa99eAdeCf1c644c95d7fF67e6fF1aE5A",
     },
     [NetworkID.Testnet]: {
-      bondAddress: "0xF4FF40f25f0d59e937a47831aea2eFE3e597D198",
-      reserveAddress: "0x0D61cafCf246cFbe1A0e648FC1B2bDfaCae1617e",
+      bondAddress: "",
+      reserveAddress: "",
     },
     [NetworkID.Local]: {
       bondAddress: "",
@@ -56,7 +56,7 @@ export const usdt_spice = new LPBond({
     },
   },
   lpUrl:
-    "https://app.yuzu-swap.com/#/add/0x614e3c1EF0fC94Eb4588c50cAbceADCCE28A3893/0x840e2404dF8420B0f4794F67A50f2B4112362cD9",
+    "https://www.duneswap.com/exchange/add/0x095c5A33aA796605F5dc8C421975549C1c80b7F0/0xdC19A122e268128B5eE20366299fc7b5b199C8e3",
 });
 
 // HOW TO ADD A NEW BOND:

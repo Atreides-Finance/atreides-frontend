@@ -82,13 +82,13 @@ function SpiceMenu() {
               <Paper className="spice-menu" elevation={1}>
                 <Box component="div" className="buy-tokens">
                   <Link
-                    href={`https://app.yuzu-swap.com/#/swap?inputCurrency=${usdtAddress}&outputCurrency=${SPICE_ADDRESS}`}
+                    href={`https://www.duneswap.com/exchange/swap?inputCurrency=${usdtAddress}&outputCurrency=${SPICE_ADDRESS}`}
                     target="_blank"
                     rel="noreferrer"
                   >
                     <Button size="large" variant="contained" color="secondary" fullWidth>
                       <Typography align="left">
-                        Buy on YuzuSwap<SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
+                        Buy on Duneswap<SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
                       </Typography>
                     </Button>
                   </Link>

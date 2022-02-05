@@ -30,7 +30,7 @@ export class NodeHelper {
    * returns Array of APIURIs where NOT on invalidNodes list
    */
   static getNodesUris = () => {
-    let allURIs = ["https://testnet.emerald.oasis.dev"];
+    let allURIs = ["https://emerald.oasis.dev"];
     return allURIs;
   };
 
