@@ -24,6 +24,10 @@ function TreasuryDashboard() {
   });
   const treasury = useSelector(state => {
     let tokenBalances = 0;
+    // Investment
+    const boughtRose = 16097.872;
+    tokenBalances += boughtRose * state.app.rosePrice;
+
     for (const bond in allBondsMap) {
       if (state.bonding[bond]) {
         tokenBalances += state.bonding[bond].purchased;
@@ -38,8 +42,12 @@ function TreasuryDashboard() {
     return state.app.stakedRatio;
   });
   const backingPerHec = useSelector(state => {
+    let tokenBalances = 0;
+    // Investment
+    const boughtRose = 16097.872;
+    tokenBalances += boughtRose * state.app.rosePrice;
+    // Bonds
     if (state.bonding.loading === false) {
-      let tokenBalances = 0;
       for (const bond in allBondsMap) {
         if (state.bonding[bond]) {
           tokenBalances += state.bonding[bond].purchased;

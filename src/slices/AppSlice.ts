@@ -7,6 +7,7 @@ import { setAll, getTokenPrice, getMarketPrice } from "../helpers";
 import { createSlice, createSelector, createAsyncThunk } from "@reduxjs/toolkit";
 import { RootState } from "src/store";
 import { IBaseAsyncThunk } from "./interfaces";
+import { abi as PairContract } from "../abi/PairContract.json";
 
 const initialState = {
   loading: false,
@@ -42,6 +43,9 @@ export const loadAppDetails = createAsyncThunk(
     }
     const sSpiceMainContract = new ethers.Contract(addresses[networkID].SSPICE_ADDRESS as string, sSPICE, provider);
     const spiceContract = new ethers.Contract(addresses[networkID].SPICE_ADDRESS as string, ierc20Abi, provider);
+    const roseUsdtAddress = "0x38310B0dB7E04B5791d2Dc8dF404F83838960473";
+    const pairContract = new ethers.Contract(roseUsdtAddress as string, PairContract, provider);
+
 
     const circ = await sSpiceMainContract.circulatingSupply();
     const total = await spiceContract.totalSupply();
@@ -75,6 +79,10 @@ export const loadAppDetails = createAsyncThunk(
     const currentIndex = await stakingContract.index();
     const endBlock = epoch.endBlock;
 
+    // Rose price
+    const reserves = await pairContract.getReserves();
+    const rosePrice = reserves[1] / reserves[0] * 10 ** 12;
+
     return {
       currentIndex: ethers.utils.formatUnits(currentIndex, "gwei"),
       currentBlock,
@@ -87,6 +95,7 @@ export const loadAppDetails = createAsyncThunk(
       stakedRatio,
       stakingTVL,
       endBlock,
+      rosePrice
     } as IAppData;
   },
 );
@@ -162,6 +171,7 @@ interface IAppData {
   readonly stakedRatio: number;
   readonly treasuryBalance?: number;
   readonly endBlock?: number;
+  readonly rosePrice?: number;
 }
 
 const appSlice = createSlice({
