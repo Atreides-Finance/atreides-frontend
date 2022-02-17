@@ -27,7 +27,8 @@ function TreasuryDashboard() {
     // Investment
     const boughtRose = 16097.872;
     tokenBalances += boughtRose * state.app.rosePrice;
-
+    const stableLizard = 20000;
+    tokenBalances += stableLizard;
     for (const bond in allBondsMap) {
       if (state.bonding[bond]) {
         tokenBalances += state.bonding[bond].purchased;
@@ -46,6 +47,8 @@ function TreasuryDashboard() {
     // Investment
     const boughtRose = 16097.872;
     tokenBalances += boughtRose * state.app.rosePrice;
+    const stableLizard = 20000;
+    tokenBalances += stableLizard;
     // Bonds
     if (state.bonding.loading === false) {
       for (const bond in allBondsMap) {
