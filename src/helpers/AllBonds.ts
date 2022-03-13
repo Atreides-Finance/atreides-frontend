@@ -59,13 +59,40 @@ export const usdt_spice = new LPBond({
     "https://www.duneswap.com/exchange/add/0x095c5A33aA796605F5dc8C421975549C1c80b7F0/0xdC19A122e268128B5eE20366299fc7b5b199C8e3",
 });
 
+export const usdt_spice_gemkeeper = new LPBond({
+  name: "spice_usdt_lp_v2",
+  displayName: "SPICE-USDT LP V2",
+  bondToken: "USDT",
+  bondIconSvg: SpiceUsdtimg,
+  bondContractABI: SpiceUsdtBondContract,
+  reserveContract: ReserveSpiceUsdtContract,
+  decimals: 6,
+  networkAddrs: {
+    [NetworkID.Mainnet]: {
+      bondAddress: "0xCc3F195c2Cb69f38EcDCe8Ab44E067D6649d2F50",
+      reserveAddress: "0x4658419f81F20F293FB3aa8409E3eE14F1749558",
+    },
+    [NetworkID.Testnet]: {
+      bondAddress: "",
+      reserveAddress: "",
+    },
+    [NetworkID.Local]: {
+      bondAddress: "",
+      reserveAddress: "",
+    },
+  },
+  lpUrl:
+    "https://app.gemkeeper.finance/#/add/0x095c5A33aA796605F5dc8C421975549C1c80b7F0/0xdC19A122e268128B5eE20366299fc7b5b199C8e3",
+});
+
 // HOW TO ADD A NEW BOND:
 // Is it a stableCoin bond? use `new StableBond`
 // Is it an LP Bond? use `new LPBond`
 // Add new bonds to this array!!
 export const allBonds = [
   usdt,
-  usdt_spice
+  usdt_spice,
+  usdt_spice_gemkeeper
 ];
 export const allBondsMap = allBonds.reduce((prevVal, bond) => {
   return { ...prevVal, [bond.name]: bond };
