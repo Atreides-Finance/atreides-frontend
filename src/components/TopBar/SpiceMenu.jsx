@@ -82,13 +82,13 @@ function SpiceMenu() {
               <Paper className="spice-menu" elevation={1}>
                 <Box component="div" className="buy-tokens">
                   <Link
-                    href={`https://www.duneswap.com/exchange/swap?inputCurrency=${usdtAddress}&outputCurrency=${SPICE_ADDRESS}`}
+                    href={`https://app.gemkeeper.finance/#/swap?inputCurrency=${usdtAddress}&outputCurrency=${SPICE_ADDRESS}`}
                     target="_blank"
                     rel="noreferrer"
                   >
                     <Button size="large" variant="contained" color="secondary" fullWidth>
                       <Typography align="left">
-                        Buy on Duneswap<SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
+                        Buy on GemKeeper<SvgIcon component={ArrowUpIcon} htmlColor="#A3A3A3" />
                       </Typography>
                     </Button>
                   </Link>
